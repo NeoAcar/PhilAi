@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables (Secrets)
+.env
+.env.*
+
+# Data directories (Large files)
+oncul_dump/
+faiss_index/
+data/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs and misc
+*.log
+eval_dataset.jsonl
+dump.rdb
+*.zip

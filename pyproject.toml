@@ -1,0 +1,19 @@
+[project]
+name = "philai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "aiohttp>=3.13.3",
+    "beautifulsoup4>=4.14.3",
+    "colorama>=0.4.6",
+    "faiss-cpu>=1.13.2",
+    "numpy>=2.4.2",
+    "openai>=2.21.0",
+    "pydantic>=2.12.5",
+    "requests>=2.32.5",
+    "scikit-learn>=1.8.0",
+    "sentence-transformers>=5.2.2",
+    "tqdm>=4.67.3",
+]
