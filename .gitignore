@@ -19,6 +19,7 @@ venv/
 oncul_dump/
 faiss_index/
 data/
+maps/
 
 # IDE settings
 .vscode/
