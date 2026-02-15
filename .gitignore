@@ -14,6 +14,7 @@ venv/
 # Environment variables (Secrets)
 .env
 .env.*
+!.env.example
 
 # Data directories (Large files)
 oncul_dump/
