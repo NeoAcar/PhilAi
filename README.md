@@ -2,23 +2,32 @@
 
 CLI-first Turkish philosophy assistant built on:
 
-- Async web scraping from `onculanalitikfelsefe.com`
+- Async web scraping from [Öncül Analitik Felsefe](https://onculanalitikfelsefe.com/)
 - Local text corpus (`oncul_dump/`)
 - Pure Dense Retrieval (FAISS vector index)
 - Agentic interaction modes (Chat, Debate, Arena)
 
+> **Note on Embeddings**: This project uses a local Turkish embedding model [`ytu-ce-cosmos/turkish-e5-large`](https://huggingface.co/ytu-ce-cosmos/turkish-e5-large). On the first run (e.g., `doctor` or `sync`), it will automatically download (~1GB) from HuggingFace. No manual setup is required.
+
 For full architecture and technical details, see `TECHNICAL.md`.
 
 ## Quick Start
-
-This project uses `uv` for dependency management.
+ This project uses `uv` for dependency management.
 
 1.  **Install dependencies**:
     ```bash
     uv sync
     ```
 
-2.  **Verify installation**:
+2.  **Configure Environment**:
+    
+    Copy `.env.example` to `.env` and set your OPENAI_API_KEY:
+    ```bash
+    cp .env.example .env
+    # Edit .env file...
+    ```
+
+3.  **Verify installation**:
     ```bash
     uv run main.py doctor
     ```
