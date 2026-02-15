@@ -1,0 +1,258 @@
+{
+  "id": "root",
+  "type": "root",
+  "content": "bilinçin metafiziği: ",
+  "detailed_body": "Analitik Felsefe:Tümü\n·\nİyi Oluş & Hayatın Anlamı\n·\nSosyal Bilimler\nFarkındalık Problemi – Sahanika Ratnayake\nFarkındalık her ne kadar kendisini nötr bir değer olarak tanıtsa da benlik ve evren hakkında (sorunlu) varsayımlarla dolu.\n\nAma yine de, böyle bir noktaya gelme yolunda her an çok fazla ilerleme kaydedebileceğimizi düşünmeye meyilliyim sanırım. Sürekli olarak ilerleyebilecek olsak bile, bilinç problemini tam anlamıyla çözüp çözemeyeceğimiz ise cevabını bilmediğim bir soru.”\nBilinç Ölçer ...",
+  "sources": [],
+  "relevance_score": 1.0,
+  "children": [
+    {
+      "id": "63d4f65c",
+      "type": "objection",
+      "content": "Sağduyu Realizmi’ne Revizyonist İtiraz",
+      "detailed_body": "Moore’un deskriptif (tasvir edici) metafiziği, “açık doğruluklar”a (truisms) ve sağduyu inançlarının genellikle doğru olduğuna dayanır. Strawson’ın çerçevesindeki revizyonist metafizik ise tam tersine, varlığın doğasına dair bu sezgisel inançları köklü biçimde değiştirmeyi hedefleyebileceğinden, bilince dair sağduyu temelli bir metafiziğin metodunu ilkesel olarak yetersiz bulabilir.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "80225624",
+          "type": "rebuttal",
+          "content": "Kanıtçılık Reddi (Bilmek = Kanıtlayabilmek Değil)",
+          "detailed_body": "Metinde vurgulandığı gibi, rüyada olmadığımı kanıtlayamasam da bunu bilebilirim; dolayısıyla bilgi için “kanıtlayabilme” şartını reddedersek şüpheci/revizyonist itirazın dayandığı standart zayıflar. Bu çizgide Moore Dönüştürmesi’nin ortaya çıkardığı argümanı kabul etmek için daha fazla gerekçemiz olduğu söylenir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [
+            {
+              "id": "9ef403f2",
+              "type": "objection",
+              "content": "Delil/kanıt ölçütü belirsizliği itirazı",
+              "detailed_body": "Metin, delilciliğin ikna edici olabilmesi için neyin “kanıt” sayılacağını açıklaması gerektiğini; ancak bunun kültürden kültüre değiştiğini ve bilimde bile tartışmalı olduğunu vurgular. Bu, “bilmek = kanıtlayabilmek değil” iddiasına karşı, asıl sorunun kanıtın kendisini reddetmek değil, kanıt ölçütünü netleştirmek olduğu eleştirisini destekler.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "80225624"
+            },
+            {
+              "id": "c487f4f7",
+              "type": "objection",
+              "content": "Poppercı yanlışlanabilirlik: Gerekçelendirme kanıtlamak değildir",
+              "detailed_body": "Popper’ın yanlışlamacılığı, inançların “kesin kanıtla” doğrulanmasını değil, yanlışlanabilir olmasını ve karşı-örnek yoksa gerekçelendirilmiş kalmasını öne çıkarır. Bu çerçevede, “bilmek kanıtlayabilmek değildir” tezi, delilciliğe itiraz ederken hedefi ıskalayabilir: Bilimsel/epistemik gerekçelendirme zaten çoğu zaman kanıtlama değil, yanlışlanmaya açıklık ve eleştirel test edilebilirlik üzerinden işler.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "80225624"
+            },
+            {
+              "id": "c09ff6b1",
+              "type": "objection",
+              "content": "Hakikat–bilgi karışıklığı itirazı (doğrulamacılığın motivasyonu)",
+              "detailed_body": "Metin, doğrulama kriterinin (ve benzeri kanıt-merkezli yaklaşımların) motivasyonunu “hakikat = bilgi” karışıklığına bağlayıp bunun “korkunç bir kafa karışıklığı” olduğunu söyler. Buna göre, “bilmek = kanıtlayabilmek değil” argümanı, eğer kanıtçılığı bu karışıklık üzerinden hedef alıyorsa, eleştirinin doğru adresi kanıtçılık değil; hakikat ile bilginin (ve anlam ile doğrulama koşullarının) birbirine karıştırılmasıdır.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "80225624"
+            }
+          ],
+          "parent_id": "63d4f65c"
+        },
+        {
+          "id": "4e696039",
+          "type": "rebuttal",
+          "content": "Deskriptif Metafizik Savunması (Truism’leri Açıklama)",
+          "detailed_body": "Moore’un “sağduyu realizmi”, Strawson’ın “revizyonist metafizik” dediği, varlığa dair inançlarımızı kökten değiştirmeyi amaçlayan yaklaşıma karşı deskriptif/tasvir edici metafiziği savunur. Felsefenin görevi, hepimizin bildiği açık doğruluklara (truisms) meydan okumak değil, onları açıklamak ve muğlaklıklarını gidermektir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [
+            {
+              "id": "7e8300af",
+              "type": "objection",
+              "content": "Truism’ler Kanıt Değil: Şüpheciliğe Karşı Yetersizlik",
+              "detailed_body": "Metinde vurgulandığı gibi “inandırıcı nedenlere sahip olmak” ile “kanıtlayabilmek” farklıdır; deskriptif metafizik truism’leri başlangıç noktası alıp açıklamaya yönelse de, bu yaklaşım şüpheciye karşı (ör. rüyada olma ihtimali) aranan türden bir kanıt sunmadığı için ikna edici bulunmayabilir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "4e696039"
+            },
+            {
+              "id": "94d70769",
+              "type": "objection",
+              "content": "Revizyonist Metafiziği Peşinen Dışlama (Soruya Yanıtı Başta Varsayma)",
+              "detailed_body": "Strawson’ın “revizyonist metafizik” dediği, varlığın doğasına dair inançlarımızı köklü biçimde değiştirmeyi amaçlayan yaklaşım, deskriptif metafizikte “sağduyuya meydan okumamak” ilkesiyle baştan problemli ilan edilir; bu da, kişilerin var olmadığı gibi revizyonist iddiaları argümansal olarak tartışmak yerine metodolojik olarak dışlama eleştirisine açık bırakır.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "4e696039"
+            },
+            {
+              "id": "90d4fe4d",
+              "type": "objection",
+              "content": "Sağduyu Realizmi Tartışmalı Metafizik Taahhütler Yükler",
+              "detailed_body": "Metinde sağduyunun kabul ettiği nesnelerin (maddi varlıklar, kategoriler vb.) “zihinlerimize ya da düşüncelerimize bağımlı olmadan var” olduğu söylenir; ancak bu, truism’leri sadece tasvir etmekten daha güçlü bir realizm iddiasıdır ve idealizme karşı tartışmalı bir ontolojik yükümlülük (zihinden bağımsız varlık) getirdiği için eleştirilebilir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "4e696039"
+            }
+          ],
+          "parent_id": "63d4f65c"
+        },
+        {
+          "id": "9429aca2",
+          "type": "rebuttal",
+          "content": "Zihin-Bağımsızlık ve Psikolojizm Reddi (Önermeler Zihinsel Değil)",
+          "detailed_body": "Metinde Moore’un, sağduyunun kabul ettiği nesnelerin (maddi varlıklar vb.) zihinlerimize/düşüncelerimize bağımlı olmadan var olduğunu savunduğu belirtilir; bu, revizyonist (ör. idealist) yeniden yorumlara karşı doğrudan bir realizm hattıdır. Ayrıca Moore, Frege’yle uyumlu biçimde psikolojizmi reddeder: düşünme eylemi ile düşünülen şey (önerme) ayrıdır; bu ayrım, “gerçekliği zihne indirgeme” türü revizyonist hamleleri sınırlar.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "63d4f65c"
+        }
+      ],
+      "parent_id": "root"
+    },
+    {
+      "id": "d5e9dc43",
+      "type": "objection",
+      "content": "Şüphecilik: Kanıtlanamayan Bilgi Sorunu",
+      "detailed_body": "Metinde vurgulandığı gibi “rüyada olmadığımı kanıtlayabilmem” ile “rüyada olmadığımı bilmem” ayrımı, bilince dair iddiaların kanıtlanabilirlik ölçütüne takılabileceğini gösterir. Eğer bilinç/metafizik iddiaları kanıt gerektiriyorsa şüpheci argüman güçlenir; kanıt gerektirmiyorsa da bu kez hangi gerekçeyle bilgi sayılacağı tartışmalı hale gelir.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "670a150c",
+          "type": "rebuttal",
+          "content": "Moorecu Sağduyu Ters Çevirme",
+          "detailed_body": "Moore’un stratejisi, şüpheci hipotezi (rüya/BIV) çürütemediğimizi varsaymak yerine, daha makul görünen sağduyu bilgisini (\"iki ayağımın üzerinde yürüdüğümü biliyorum\") başlangıç alıp buradan rüya/BIV hipotezinin yanlış olduğunu çıkarsamaktır. Böylece şüphecinin P2 türü ilkesini (BIV yanlışını bilmiyorsam dış dünyayı da bilemem) reddetmeye dayanır.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [
+            {
+              "id": "f42f8224",
+              "type": "objection",
+              "content": "Kanıtlanabilirlik Şartı Olmadan “Ters Çevirme” Zayıflar",
+              "detailed_body": "Metin, “rüyada olmadığımı kanıtlayabilmem” ile “rüyada olmadığımı bilmem” arasını ayırır ve bilmek için kanıtlayabilme şartını reddetmenin şüpheciliği bertaraf edebileceğini söyler. Bu durumda Moorecu sağduyu ters çevirme hamlesi (kanıt üretme/argümanı tersine çevirme) gereksizleşir ya da motivasyonunu kaybeder: şüphecilikten kaçınmak için ters çevirmeye ihtiyaç olmadığı itirazı doğar.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "670a150c"
+            },
+            {
+              "id": "c50d85d8",
+              "type": "objection",
+              "content": "Revizyonist Metafiziğin Meydan Okuması (Strawson Çerçevesi)",
+              "detailed_body": "Metin, Strawson’ın “revizyonist metafizik” ayrımını vererek, sağduyusal inançları kökten değiştirmeyi amaçlayan metafiziklerin mümkün olduğunu vurgular. Buna göre, sağduyuya dayanarak şüpheciliği tersine çevirmek, revizyonist metafiziğin (ör. ‘kişiler yoktur’ gibi sağduyuya aykırı tezlerin) sağduyuyu sorgulama hakkını baştan reddetmiş olur; bu da argümanın tartışmayı sağduyu lehine peşinen kapattığı eleştirisini doğurur.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "670a150c"
+            },
+            {
+              "id": "f648b2ea",
+              "type": "objection",
+              "content": "İdealist Alternatiflere Karşı Yetersiz Savunma",
+              "detailed_body": "Metin, Moore’un idealizme karşı argümanlar geliştirdiğini (özellikle “var olmak algılanmaktır” ilkesine ve “ilişkilerin içselliği” doktrinine eleştiriler) belirtir. Bu, sağduyu ters çevirmenin tek başına idealist rakipleri otomatik olarak saf dışı bırakmadığına işaret eder: idealist pozisyonlar ayrıca hedef alınmadıkça, sırf sağduyuya dayanarak yapılan ters çevirme onların iddialarını cevaplamada eksik kalabilir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "670a150c"
+            }
+          ],
+          "parent_id": "d5e9dc43"
+        },
+        {
+          "id": "8772e2ef",
+          "type": "rebuttal",
+          "content": "Şüpheciliği Şüpheciye Yöneltme (Yükümlülük İtirazı)",
+          "detailed_body": "Metindeki bir hatta göre, kanıt/temellendirme talep etmesi gereken taraf şüpheci değil, bilginin mümkün olduğunu savunan epistemologlardır; bu yüzden Moore’un hamlesi, dış dünya bilgisine nasıl ulaştığımızı açıklamadığı için şüpheciye makul bir cevap sayılmayabilir. Buna karşılık metin, şüpheciliğin kendisini de sorgulamanın (BIV olduğumuza mı olmamamıza mı dair şüphenin daha makul olduğu) meşru bir savunma hattı olabileceğini gündeme getirir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [
+            {
+              "id": "350fb4c8",
+              "type": "objection",
+              "content": "Döngüsellik (Pryor/Wright tarzı şüpheci çıkmaz)",
+              "detailed_body": "Metindeki Pryor ve Wright’a atıfla yeniden kurulan şüpheci itirazda, sıradan algısal inançları (ör. “iki elim var”) gerekçelendirmek için dış dünyanın varlığına ön-gerekçe istenir; fakat dış dünya inancı da ancak bu sıradan inançlardan çıkarımla desteklenebilir. Bu, şüpheciye yöneltilen “yükümlülük” talebinin kendisini döngüsel ve epistemik olarak felç edici kıldığı eleştirisidir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "8772e2ef"
+            },
+            {
+              "id": "0f7f27b5",
+              "type": "objection",
+              "content": "Dretske: Gerekçelendirme zorunlu değil (yükümlülük reddi)",
+              "detailed_body": "Dretske’ye göre bir iddiayı bilmek için, rakip açıklamayı (ör. Bohm yaklaşımı) dışlamak/gerekçelendirmek zorunlu değildir. Bu yüzden “Şüpheciye karşı P’yi savunacaksan Q’yu bağımsız gerekçelendirmek zorundasın” türü bir yükümlülük itirazı, bilgi için gereğinden fazla bir gerek şart dayatmakla eleştirilebilir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "8772e2ef"
+            },
+            {
+              "id": "b1fbca83",
+              "type": "objection",
+              "content": "Klein: Kapanış ilkesiyle yükümlülük tersine döner",
+              "detailed_body": "Klein’ın kapanış (closure) fikri uyarınca, P doğrulanırsa P’nin gerektirdiği şeyler de doğrulanır; dolayısıyla P’yi (ör. Kopenhag yaklaşımı) doğrulamak, onun gerektirdiği alternatifin elenmesi gibi sonuçları da beraberinde getirir. Bu, şüpheciye yöneltilen “önce alternatifin yanlışını göster” yükümlülüğünün bağımsız bir ek ödev olmayabileceği, P’nin doğrulanmasıyla zaten karşılanacağı eleştirisidir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "8772e2ef"
+            }
+          ],
+          "parent_id": "d5e9dc43"
+        },
+        {
+          "id": "9a6dc763",
+          "type": "rebuttal",
+          "content": "Yanılabilircilik (Fallibilizm) İtirazı: Kesinlik Şartını Reddetme",
+          "detailed_body": "Steup’un çizgisinde, duyumlar tek başına BIV olmadığımızı göstermese de BIV’yi mümkün kılacak teknolojiye dair arka plan bilgisi gibi unsurların BIV hipotezini zayıflatabileceği savunulur. Bu yaklaşım, Kartezyen kesinlik/yanılmazcılık talebini reddeden “olağan bilgi” anlayışıyla, BIV argümanını “güvenilir değil, geçersiz ya da dikkate değer değil” diye etkisizleştirmeye çalışır.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [
+            {
+              "id": "1ac16f30",
+              "type": "objection",
+              "content": "Sonucu Varsayma (Begging the Question) Eleştirisi",
+              "detailed_body": "Metinde, (1) numaralı öncülün “kabul edilemez” sayılmasının tek gerekçesinin onun determinizmle uyumsuzluğu olduğu; yani (1)’in reddinin, determinizmi korumak için baştan varsayıldığı söyleniyor. Bu, determinizmi çürütmemek için (1)’i reddetmenin döngüsel bir akıl yürütme olduğu itirazıdır.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "9a6dc763"
+            },
+            {
+              "id": "2310aa4d",
+              "type": "objection",
+              "content": "Eş Seslilik (Equivocation): ‘Yapmalı’ Ahlaki mi Epistemik mi?",
+              "detailed_body": "Argümanın, öncül (2)’deki “yapmalı”yı ahlaki normatiflik anlamında; (1)’deki “yapmalı”yı ise epistemik rasyonalite anlamında kullanarak anlam kaydırdığı iddia ediliyor. Bu durumda argüman, aynı kelimeyi iki farklı anlamda kullanıp geçersiz bir çıkarım üretiyor eleştirisine açık hale geliyor.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "9a6dc763"
+            },
+            {
+              "id": "30155522",
+              "type": "objection",
+              "content": "Yanılmazcılık/Dışsalcılık: Bilgi İçin Yanlışlık Olasılığını Dışlama Şartı",
+              "detailed_body": "Metindeki yanılmazcılık ve dışsalcı yaklaşım, bilginin oluşumu için “inancın yanlış olma olasılığı dışarıda bırakılmalı” koşulunu savunur ve bunu Gettier türü durumları engellemek için kullanır. Bu, fallibilizmin kesinlik şartını reddetmesine karşı, bilginin (en azından bazı durumlarda) yanlışlık olasılığını dışlamayı gerektirdiği yönünde bir eleştiridir.",
+              "sources": [],
+              "relevance_score": 0.9,
+              "children": [],
+              "parent_id": "9a6dc763"
+            }
+          ],
+          "parent_id": "d5e9dc43"
+        }
+      ],
+      "parent_id": "root"
+    },
+    {
+      "id": "8948defc",
+      "type": "objection",
+      "content": "Otopoyeziz Eleştirisi: ‘Gerçeklik’ Varsayımının Epistemik Temelsizliği",
+      "detailed_body": "Maturana bağlamında, biyolojik temelli idrakimizin erişemediği bir “gerçekliğin” epistemolojik sorun diye sunulmasının tutarsız olduğu söylenir; gerçeklik ancak tüm bilgilerin dayandığı bir varsayım/açıklama argümanı olabilir. Bu da bilincin metafiziğinin ‘gerçeklik’ gibi bir dayanağı temel inanç mı, çıkarımsal bilgi mi yoksa başka bir epistemik temel mi saydığı sorusunu doğurur; metne göre “başka bir epistemik temel” mümkün görünmez.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [],
+      "parent_id": "root"
+    }
+  ],
+  "parent_id": null
+}

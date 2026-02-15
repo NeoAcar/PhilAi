@@ -124,7 +124,94 @@ def main():
     elif command == "arena":
         from rag.chat import arena_loop
         arena_loop()
-    
+
+    elif command == "map":
+        if len(sys.argv) < 3:
+            print("❌ Konu belirtmelisiniz. Örn: python main.py map 'Kötülük Problemi'")
+            sys.exit(1)
+        
+        # Parse arguments manually
+        args = sys.argv[2:]
+        topic_parts = []
+        depth = 3
+        branching = 3
+        output_prefix = None
+        
+        i = 0
+        while i < len(args):
+            arg = args[i]
+            if arg == "--depth":
+                if i + 1 < len(args):
+                    depth = int(args[i+1])
+                    i += 2
+                else:
+                    i += 1
+            elif arg == "--branching":
+                if i + 1 < len(args):
+                    branching = int(args[i+1])
+                    i += 2
+                else:
+                    i += 1
+            elif arg == "--output":
+                if i + 1 < len(args):
+                    output_prefix = args[i+1]
+                    i += 2
+                else:
+                    i += 1
+            else:
+                topic_parts.append(arg)
+                i += 1
+        
+        topic = " ".join(topic_parts)
+        if not topic:
+             print("❌ Konu belirtmelisiniz.")
+             sys.exit(1)
+        
+        # Import lazily
+        from rag.mapper import TopicMapper, export_markdown, export_json, export_interactive_html
+        import time
+        import os
+        
+        print(f"🚀 Felsefi Harita Oluşturuluyor: '{topic}'")
+        print(f"⚙️  Ayarlar: Derinlik={depth}, Dallanma={branching}")
+        print("   (Bu işlem derinliğe bağlı olarak 30-200 saniye sürebilir...)")
+        
+        start = time.time()
+        mapper = TopicMapper(topic, max_depth=depth, max_children=branching)
+        root = mapper.build_map()
+        duration = time.time() - start
+        
+        if not root:
+             print("❌ Harita oluşturulamadı (yetersiz veri).")
+             sys.exit(1)
+
+        # Save outputs
+        if not output_prefix:
+            output_prefix = "map_" + topic.replace(" ", "_").lower()[:30]
+        
+        output_dir = "maps"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        base_path = os.path.join(output_dir, output_prefix)
+        md_file = f"{base_path}.md"
+        json_file = f"{base_path}.json"
+        html_file = f"{base_path}.html"
+        
+        with open(md_file, "w", encoding="utf-8") as f:
+            f.write(export_markdown(root))
+            
+        with open(json_file, "w", encoding="utf-8") as f:
+            f.write(export_json(root))
+            
+        with open(html_file, "w", encoding="utf-8") as f:
+            f.write(export_interactive_html(root))
+            
+        print(f"\n✅ Harita tamamlandı ({duration:.1f}s)!")
+        print(f"📄 Markdown Rapor: {md_file}")
+        print(f"📊 JSON Veri:    {json_file}")
+        print(f"🌐 İnteraktif:   {html_file} (Tarayıcıda açın!)")
+
+
     elif command == "ask":
         opts, rest = _parse_shared_flags(sys.argv[2:])
         if not rest:

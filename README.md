@@ -50,6 +50,9 @@ uv run main.py chat
 # Agentic Debate (Argument analysis + Counter-RAG)
 uv run main.py debate --category "Din_Felsefesi"
 
+# Argument Mapper (Recursive Tree)
+uv run main.py map "Kötülük Problemi" --depth 3 --branching 3
+
 # AI Arena (Two AIs debating each other)
 uv run main.py arena
 

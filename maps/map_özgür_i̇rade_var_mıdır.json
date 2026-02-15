@@ -1,0 +1,73 @@
+{
+  "id": "root",
+  "type": "root",
+  "content": "Özgür İrade Var Mıdır: ",
+  "detailed_body": "Analitik Felsefe:Tümü\n·\nMetafizik\nDoğası Gereği Özgür: Özgür İradenin Biyolojik Kökleri – Anne Sophie Meincke\nİrademizin özgür olup olmadığı, kuşaklar boyu filozofların kafa yorduğu bir sorudur. Bu makalede, filozof Anne Sophie Meincke, özgür iradenin kafa karıştırıcı ikilemini ve biyolojinin bu sorunun çözümüne nasıl katkı sağlayabileceğini açıklıyor.\n\nÖzgür iradenin varlığı sorunu, düşünce tarihinin –henüz kesin bir çözüme kavuşmamış– en köklü problemlerinden biridir: “İnsanın özgür iradesi va...",
+  "sources": [],
+  "relevance_score": 1.0,
+  "children": [
+    {
+      "id": "ce0fe9a2",
+      "type": "objection",
+      "content": "Strawsoncu İmkânsızlık İtirazı: Determinizm yoksa rastgelelik var",
+      "detailed_body": "Metinde, determinizmin doğru olmadığı varsayımında eylemlerin (parmağı oynatmak dahil) rastgele olacağı ve bunun da özgür iradeyi ortadan kaldıracağı söyleniyor; Galen Strawson da bu çizgide özgür iradenin var olmasının “muhtemelen imkansız” olduğunu savunuyor.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "aa52193a",
+          "type": "rebuttal",
+          "content": "Belirlenmemişlik ≠ Rastgelelik (Mantıksal Boşluk Savunması)",
+          "detailed_body": "Chomsky’nin işaret ettiği gibi, bir eylemin evrenin başlangıç koşulları ve doğa yasaları tarafından tam olarak belirlenmemiş olması onun zorunlu olarak rastgele olduğu anlamına gelmez. Determinizm ile rastgelelik arasında mantıksal bir boşluk vardır; özgür irade bu ikisinin dışında, bu boşlukta konumlanabilir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "ce0fe9a2"
+        },
+        {
+          "id": "01af88d6",
+          "type": "rebuttal",
+          "content": "Kavramsal İkilem Yanılgısı (Model Sınırı Savunması)",
+          "detailed_body": "Chomsky’ye göre bilimsel/kavramsal modellerimiz eylemleri ya belirlenmiş ya da rastgele olarak yakalamaya eğilimlidir; özgür irade bunların ikisi de değilse, onu bu ikiliğe zorlamak hatalıdır. Bu durumda “determinizm yoksa rastgelelik var” itirazı, özgür iradeyi yanlış bir ikiliğe sıkıştıran bir çerçeve dayatması olur.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "ce0fe9a2"
+        }
+      ],
+      "parent_id": "root"
+    },
+    {
+      "id": "61af0d06",
+      "type": "objection",
+      "content": "İnançlar Üzerinde Kontrol Yok İtirazı: “Yapmalı” epistemik anlamda çöker",
+      "detailed_body": "İtiraz #4’e göre insanlar inançları üzerinde kontrole sahip değildir; bu yüzden “epistemik olarak irrasyonel bir inanca sahip olmamalı” denmesi, kişinin o inançtan kaçınabilme gücü olduğu anlamına gelmez. Çengelli iğne olduğunuza inanmayı deneyememeniz örneğiyle, inançların iradi kontrol altında olmadığı ileri sürülür.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "81b3ea13",
+          "type": "rebuttal",
+          "content": "Doksastik Özgürlük: İnançtan kaçınma ve kabul etme mümkündür",
+          "detailed_body": "Metne göre insanlar seçimlerinde özgür oldukları gibi inançlarında da (en azından yeterince gerekçelendirilmemiş bir inancı kabul etmekten kaçınma düzeyinde) özgür olabilirler; aksi halde irrasyonel inançlar için eleştirinin nasıl mümkün olacağı açıklanamaz. Ayrıca delillerin kesin sonuca götürmediği durumlarda “iman sıçrayışı” ile bir önermeyi kabul etmeyi seçme ve iyi gerekçelendirilmiş bir önermeyi öz-kandırı yoluyla reddetme gibi olgular, inançlar üzerinde bir tür kontrol bulunduğuna ampirik dayanak sunar.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "61af0d06"
+        },
+        {
+          "id": "247fa020",
+          "type": "rebuttal",
+          "content": "“Çengelli iğne” deneyi hedefi ıskalıyor: Yanlış türden örnek",
+          "detailed_body": "Metindeki savunmaya göre “çengelli iğne olduğuna inanmayı dene” örneği, gerekçelendirilmemiş bir inancı benimsemekten kaçınamamanın değil, tersine reddi güçlü biçimde gerekçelendirilmiş (açıkça yanlış) bir önermeyi kabul edememenin örneğidir. Bu yüzden, ‘gerekçelendirilmemiş önermeleri kabul etmekten kaçınmalıyız’ şeklindeki epistemik “yapmalı”yı zayıflatmaz.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "61af0d06"
+        }
+      ],
+      "parent_id": "root"
+    }
+  ],
+  "parent_id": null
+}

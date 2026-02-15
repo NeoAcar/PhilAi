@@ -1,0 +1,103 @@
+{
+  "id": "root",
+  "type": "root",
+  "content": "Kötülük Problemi: ",
+  "detailed_body": "Felsefe tarihindeki en tartışmalı konulardan biri uzun zamandır din felsefesi literatüründe tartışılmaya devam edilen Kötülük Problemi’dir. Çağdaş din felsefesinde Plantinga ve Mackie arasındaki tartışmalarla daha da alevlenen\n“Kötülük Problemi”\ntartışmaları güncelliğini hala korumaktadır. Bu yazımızda Kötülük Problemi’nin genel bir şemasını çizmeye çalışacak; Plantinga’nın Özgür İrade Savunusu’na değinecek ve bu savunmayı eleştirmeye çalışacağız. Giriş\nDin felsefesi alanında Tanrı’nın varlığı l...",
+  "sources": [],
+  "relevance_score": 1.0,
+  "children": [
+    {
+      "id": "4b4e8452",
+      "type": "objection",
+      "content": "Özgür İrade Savunması (Plantinga)",
+      "detailed_body": "Plantinga’ya göre Tanrı’nın ahlaki açıdan anlamlı özgür iradeye sahip yaratıklar yaratması, onların kötülük yapma olasılığını da içerir; bu yüzden kötülüğün varlığı Tanrı’nın her şeye kadir, tümüyle iyi ve her şeyi bilen olmasıyla mantıksal bir çelişki oluşturmak zorunda değildir.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [],
+      "parent_id": "root"
+    },
+    {
+      "id": "528427b1",
+      "type": "objection",
+      "content": "Teorik–Varoluşsal Ayrımı: Argümanın Hedefi Kayabilir (Taliaferro & Marty)",
+      "detailed_body": "Taliaferro ve Marty’nin ayrımına göre kötülük problemi teorik (mantıksal/olasılıksal) ve varoluşsal biçimlerde ele alınır; bu, “kötülük problemi”nin her zaman Tanrı’nın varlığıyla mantıksal tutarsızlık gösteren tek bir argüman olmadığına, dolayısıyla argümanın kapsam ve iddiasının netleştirilmesi gerektiğine işaret eder.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "e16f6360",
+          "type": "rebuttal",
+          "content": "Ontolojik–Epistemolojik Objektiflik Ayrımı",
+          "detailed_body": "Metin, objektif ve bağlayıcı bir ahlak için ontolojik objektifliğin zorunlu olup olmadığının tartışmalı olduğunu söyler. Matematik analojisiyle, ontolojik varlık (nesnelerin gerçekten var olması) reddedilse bile doğruların/objektifliğin (epistemolojik objektiflik) savunulabileceği belirtilir; dolayısıyla argümanın hedefi (ontolojiye saldırı) varoluşsal düzeyde belirleyici olmayabilir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "528427b1"
+        },
+        {
+          "id": "918c6bbe",
+          "type": "rebuttal",
+          "content": "Debunking’in Türü: Epistemolojik mi Metafizik mi? (Das)",
+          "detailed_body": "Ramon Das’a atıfla, evrimci çürütme itirazlarının aslında epistemolojik değil metafiziksel olduğu iddia edilir. Bu, argümanın “inançlarımız gerekçesiz” sonucuna değil “ahlaki olgular yok” sonucuna kaydığını (hedef kayması) göstererek, epistemik çürütme iddiasını zayıflatır.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "528427b1"
+        },
+        {
+          "id": "f2d52cf2",
+          "type": "rebuttal",
+          "content": "Street Okuması: İtirazın Kime Ait Olduğu ve Ne Hedeflediği Belirsizleşebilir",
+          "detailed_body": "Metin, Street’in verdiği örneğin ‘evrim ile ahlaki yargılarımız arasında bağ yoktur’ görüşünü eleştirdiği kişilerin ağzından anlatıyor olabileceğini, yani bunun Street’in kendi tezi olmayabileceğini söyler. Bu yorum mümkün olduğundan, argümanın hedefinin (realistlere karşı epistemolojik itiraz mı, yoksa başka bir pozisyona yönelik mi) kayabileceği ve dolayısıyla eleştirinin yanlış hedefe yöneltilebileceği savunulur.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "528427b1"
+        }
+      ],
+      "parent_id": "root"
+    },
+    {
+      "id": "5124464e",
+      "type": "objection",
+      "content": "Mantıksal Değil, Delilci/ Olasılıksal Okuma (Taliaferro & Marty)",
+      "detailed_body": "Metindeki ayrıma göre mantıksal versiyon ‘herhangi bir kötülük’ ile Tanrı’nın varlığının bağdaşamayacağını iddia ederken, olasılıksal (delilci) versiyon mevcut kötülüğün miktar/şiddetinden Tanrı’nın varlığının ‘pek mümkün olmadığı’ sonucunu çıkarır; bu da mantıksal çelişki iddiasının (Mackie/Epiküros çizgisi) daha zayıf bir hedef olabileceği eleştirisini doğurur.",
+      "sources": [],
+      "relevance_score": 0.9,
+      "children": [
+        {
+          "id": "0370d8b7",
+          "type": "rebuttal",
+          "content": "Moorecu Simetri / Beraberelik (2 numaralı argüman)",
+          "detailed_body": "Metne göre şüphecinin “1 numaralı argümanı” (simülasyon vb.) kadar mantıksal olarak zorlayıcı, simetrik bir “2 numaralı argüman” da kurulabilir. Bu beraberelik, şüphecinin sonucunu mantıksal olarak kabul etmek zorunda olmadığımızı gösterir ve şüpheciyi bir tür çıkmaza/berabereye iter.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "5124464e"
+        },
+        {
+          "id": "012a2570",
+          "type": "rebuttal",
+          "content": "Sezgisel Mantıklılık İddiasının Yetersizliği (daha iyi gerekçelendirme talebi)",
+          "detailed_body": "Şüpheci, 1 numaralı öncülün “sezgisel olarak mantıklı” olduğunu söyleyerek delil ihtiyacını düşürmeye çalışabilir; ancak metinde Moore’un çizgisi, böyle bir ısrarın tek başına yeterli olmadığı ve 1 numaralı argümanın 2 numaralı argümandan daha iyi olduğuna karar vermeden önce daha iyi bir gerekçelendirme talep edilmesi gerektiğidir.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "5124464e"
+        },
+        {
+          "id": "f1bde463",
+          "type": "rebuttal",
+          "content": "Ampirik Gerekçelerin ‘İkna Edici Görünmesi’ (Moore’un 1* vurgusu)",
+          "detailed_body": "Metin, şüphecinin 1 numaralı öncül için sunduğu ampirik gerekçelerin “hakiki” olmayabileceğini; iyi gerekçeler gibi hissettirse de alttaki varsayımlar didiklenince güçlerini yitirebileceğini söyler (Moore’un 1*’ini destekleyen varsayım). Bu, delilci/olasılıksal okumanın dayandığı ampirik desteklerin güvenilirliğine yönelik bir savunmadır.",
+          "sources": [],
+          "relevance_score": 0.9,
+          "children": [],
+          "parent_id": "5124464e"
+        }
+      ],
+      "parent_id": "root"
+    }
+  ],
+  "parent_id": null
+}
