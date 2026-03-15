@@ -1,7 +1,10 @@
 # Retriever - FAISS'den arama
+import os
+import io
 import json
 import pickle
 import re
+import contextlib
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
@@ -69,6 +72,28 @@ TR_MONTHS = {
 # Description embeddings cache
 _desc_embedding_cache = {}
 
+
+def _silence_hf_progress() -> None:
+    """HuggingFace/Transformers progress bar ve gürültülü logları kapat."""
+    os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+    os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
+    try:
+        from huggingface_hub.utils import disable_progress_bars
+
+        disable_progress_bars()
+    except Exception:
+        pass
+
+    try:
+        from transformers.utils import logging as hf_logging
+
+        hf_logging.set_verbosity_error()
+        hf_logging.disable_progress_bar()
+    except Exception:
+        pass
+
+
 def _get_description_embeddings(config):
     """Kategori açıklamalarını önceden vektörleştir (lazy load)."""
     global _desc_embedding_cache
@@ -106,20 +131,26 @@ def get_openai_client():
 def get_local_model():
     global _local_model
     if _local_model is None:
+        _silence_hf_progress()
         from sentence_transformers import SentenceTransformer
         import torch
 
         device = "cuda" if USE_GPU and torch.cuda.is_available() else "cpu"
-        _local_model = SentenceTransformer(LOCAL_EMBEDDING_MODEL, device=device)
+        # SentenceTransformer model load sırasında çıkan "Loading weights" barını bastır.
+        with contextlib.redirect_stderr(io.StringIO()):
+            _local_model = SentenceTransformer(LOCAL_EMBEDDING_MODEL, device=device)
     return _local_model
 
 
 def get_reranker_model():
     global _reranker_model
     if _reranker_model is None:
+        _silence_hf_progress()
         from sentence_transformers import CrossEncoder
 
-        _reranker_model = CrossEncoder(RERANKER_MODEL)
+        # Opsiyonel reranker yüklemesinde de aynı progress/log spam'ini bastır.
+        with contextlib.redirect_stderr(io.StringIO()):
+            _reranker_model = CrossEncoder(RERANKER_MODEL)
     return _reranker_model
 
 
@@ -658,7 +689,7 @@ def format_context(
         if len(content) > max_chars_per_doc:
             content = content[:max_chars_per_doc].rsplit(" ", 1)[0].rstrip() + "..."
 
-        header = f"[Kaynak {i}] {title}"
+        header = f"Kaynak {i}: {title}"
         if author:
             header += f" - {author}"
         if category:
@@ -697,13 +728,13 @@ def build_evidence_snippets(
     else:
         selected = [(i + 1, d) for i, d in enumerate(docs[:max_items])]
 
-    lines = ["\nKanıtlar:"]
-    for n, doc in selected[:max_items]:
+    lines = ["\nKaynak Özetleri:"]
+    for _, doc in selected[:max_items]:
         text = (doc.get("content") or "").replace("\n", " ").strip()
         if len(text) > snippet_chars:
             text = text[:snippet_chars].rsplit(" ", 1)[0].rstrip() + "..."
         title = doc.get("metadata", {}).get("title", "Bilinmiyor")
-        lines.append(f"- [Kaynak {n}] {title}: {text}")
+        lines.append(f"- {title}: {text}")
     return "\n".join(lines)
 
 

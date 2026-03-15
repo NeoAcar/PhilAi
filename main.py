@@ -13,6 +13,7 @@ Kullanım:
     python main.py categories "..."  # Semantik kategori öner
     python main.py doctor    # Veri/index sağlık raporu
     python main.py eval      # Retrieval değerlendirme
+    python main.py stats     # Korpus istatistik JSON raporu
 """
 import sys
 import logging
@@ -254,6 +255,20 @@ def main():
         from rag.eval import cli as eval_cli
 
         eval_cli(sys.argv[2:])
+
+    elif command == "stats":
+        from rag.stats import run_stats
+
+        out_path = None
+        args = sys.argv[2:]
+        i = 0
+        while i < len(args):
+            if args[i] == "--out" and i + 1 < len(args):
+                out_path = args[i + 1]
+                i += 2
+            else:
+                i += 1
+        run_stats(output_path=out_path)
     
     else:
         print(f"Bilinmeyen komut: {command}")

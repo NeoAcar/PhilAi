@@ -1,8 +1,10 @@
 # Indexer - Dokümanları FAISS'e indexle
 import os
+import io
 import json
 import pickle
 import re
+import contextlib
 from pathlib import Path
 from tqdm import tqdm
 
@@ -24,6 +26,27 @@ _openai_client = None
 _local_model = None
 
 
+def _silence_hf_progress() -> None:
+    """HuggingFace/Transformers progress bar ve gürültülü logları kapat."""
+    os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+    os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
+    try:
+        from huggingface_hub.utils import disable_progress_bars
+
+        disable_progress_bars()
+    except Exception:
+        pass
+
+    try:
+        from transformers.utils import logging as hf_logging
+
+        hf_logging.set_verbosity_error()
+        hf_logging.disable_progress_bar()
+    except Exception:
+        pass
+
+
 def get_openai_client():
     global _openai_client
     if _openai_client is None:
@@ -35,13 +58,16 @@ def get_openai_client():
 def get_local_model():
     global _local_model
     if _local_model is None:
+        _silence_hf_progress()
         from sentence_transformers import SentenceTransformer
         import torch
         device = "cuda" if USE_GPU and torch.cuda.is_available() else "cpu"
         print(f"[i] Loading local embedding model on: {device.upper()}")
         if device == "cuda":
             print(f"    GPU: {torch.cuda.get_device_name(0)}")
-        _local_model = SentenceTransformer(LOCAL_EMBEDDING_MODEL, device=device)
+        # SentenceTransformer model load sırasında çıkan "Loading weights" barını bastır.
+        with contextlib.redirect_stderr(io.StringIO()):
+            _local_model = SentenceTransformer(LOCAL_EMBEDDING_MODEL, device=device)
     return _local_model
 
 

@@ -51,6 +51,8 @@ uv run main.py sync
 # uv run main.py index
 ```
 
+> Indexes are namespaced by chunking strategy (e.g. `...__chunk_paragraph`, `...__chunk_document`) so you can switch chunking modes without overwriting other indexes.
+
 ### Modes
 ```bash
 # Agentic Chat (Smart routing + Multi-query)
@@ -87,6 +89,16 @@ To run benchmarks:
 uv run main.py eval --sample 30 --k 5
 ```
 
+## Corpus Stats
+
+Generate a JSON snapshot for corpus monitoring:
+
+```bash
+uv run main.py stats
+# or custom output path:
+uv run main.py stats --out reports/corpus_stats.json
+```
+
 Current Baseline (Feb 2026):
 - `Hit@5`: ~0.93
 - `MRR`: ~0.78
@@ -101,5 +113,3 @@ Current Baseline (Feb 2026):
   - `agents.py`: LLM Agent logic
   - `chat.py`: Interaction loops
   - `config.py`: Configuration
-
-

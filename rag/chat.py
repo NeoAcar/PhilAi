@@ -1,6 +1,5 @@
 # Chat - Agentic RAG sohbet arayüzü
 from openai import OpenAI
-
 import re
 
 from .config import CHAT_MODEL, TOP_K
@@ -9,7 +8,6 @@ from .retriever import (
     multi_search,
     format_context,
     get_categories,
-    build_evidence_snippets,
     suggest_categories,
 )
 from .agents import (
@@ -26,7 +24,8 @@ CATEGORY_TOP_K = 15
 MAX_HISTORY_MESSAGES = 12
 MAX_HISTORY_CHARS = 9000
 AUTO_CATEGORY_SCORE_THRESHOLD = 0.33
-APPEND_EVIDENCE_SNIPPETS = True
+APPEND_SOURCE_LIST = True
+MAX_SOURCES_IN_OUTPUT = 3
 
 _chat_client = None
 
@@ -44,9 +43,11 @@ Yanıtlarını aşağıdaki kaynaklardan üret.
 Kurallar:
 1. Önce kaynak bağlamını kullan. Spekülasyon yapma.
 2. İddialarını metindeki kanıtlara dayandır.
-3. Yanıtın sonunda en az 1 kaynak etiketi ver: [Kaynak 1], [Kaynak 2]...
-4. Kaynakta net bilgi yoksa bunu açıkça söyle ve ardından genel bilgiyle kısa destek ver.
-5. Türkçe, net ve akademik bir üslup kullan.
+3. Cevap içinde ilgili cümlelerden sonra [Kaynak n] etiketi kullan.
+4. Yanıt sonunda ayrı bir "Kaynaklar" listesi yazma (sistem bunu otomatik ekler).
+5. Kaynakta net bilgi yoksa bunu açıkça söyle ve ardından genel bilgiyle kısa destek ver.
+6. Türkçe, net ve akademik bir üslup kullan.
+7. Kullanıcı bir fikri veya mantık akışını anlamakta zorlanıyorsa, kısa ve uygun bir analoji kullan.
 
 Kaynak dokümanlar:
 {context}
@@ -54,10 +55,12 @@ Kaynak dokümanlar:
 
 SYSTEM_PROMPT_NO_CONTEXT = """Sen Türkçe felsefe alanında uzman bir asistansın.
 Kaynak bağlamı bulunamadığında bunu açıkça belirt ve genel felsefe bilgisiyle yardımcı ol.
-Türkçe ve net yaz."""
+Türkçe ve net yaz.
+Kullanıcı bir fikri veya mantık akışını anlamakta zorlanıyorsa, kısa ve uygun bir analoji kullan."""
 
 SYSTEM_PROMPT_NO_RAG = """Sen Türkçe felsefe konularında uzman bir asistansın.
-Doğal ve samimi şekilde sohbet et. Türkçe yanıt ver."""
+Doğal ve samimi şekilde sohbet et. Türkçe yanıt ver.
+Kullanıcı bir fikri veya mantık akışını anlamakta zorlanıyorsa, kısa ve uygun bir analoji kullan."""
 
 DEBATER_PROMPT = """Sen keskin bir felsefe tartışmacısısın.
 
@@ -65,7 +68,7 @@ Kurallar:
 1. Sadece kullanıcının verdiği argümana yanıt ver.
 2. Her yanıtta tek bir zayıf noktaya odaklan.
 3. 3-4 cümleyi geçme.
-4. Mümkünse kaynaklardan kanıt kullan ve [Kaynak n] ile belirt.
+4. Mümkünse kaynaklardan kanıt kullan ve ilgili yere [Kaynak n] etiketi ekle.
 5. Kişiye değil argümana saldır.
 6. Kullanıcı pes ederse tartışmayı kısa ve nazik şekilde kapat.
 
@@ -136,28 +139,98 @@ def _stream_response(client, messages, model=CHAT_MODEL) -> str:
     return full_response
 
 
+def _build_source_list(
+    docs: list[dict],
+    max_items: int = MAX_SOURCES_IN_OUTPUT,
+    source_numbers: list[int] | None = None,
+) -> str:
+    if not docs or max_items <= 0:
+        return ""
+
+    if source_numbers:
+        selected_nums = [n for n in source_numbers if 1 <= n <= len(docs)]
+    else:
+        selected_nums = list(range(1, len(docs) + 1))
+
+    seen = set()
+    lines = ["\nKaynaklar:"]
+
+    for n in selected_nums:
+        doc = docs[n - 1]
+        md = doc.get("metadata", {})
+        title = (md.get("title") or "Bilinmeyen kaynak").strip()
+        url = (md.get("url") or "").strip()
+
+        key = url or title.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+
+        if url:
+            lines.append(f"- [Kaynak {n}] {title}: {url}")
+        else:
+            lines.append(f"- [Kaynak {n}] {title}")
+
+        if len(lines) - 1 >= max_items:
+            break
+
+    return "\n".join(lines) if len(lines) > 1 else ""
+
+
 def _extract_cited_sources(text: str) -> list[int]:
-    matches = re.findall(r"\[Kaynak\s+(\d+)\]", text or "", flags=re.IGNORECASE)
-    nums = []
+    matches = re.findall(r"\[Kaynak\s*(\d+)\]", text or "", flags=re.IGNORECASE)
+    out = []
     seen = set()
     for m in matches:
         n = int(m)
-        if n not in seen:
-            nums.append(n)
-            seen.add(n)
-    return nums
+        if n in seen:
+            continue
+        seen.add(n)
+        out.append(n)
+    return out
 
 
-def _append_evidence_if_any(response: str, docs: list[dict], stream: bool) -> str:
-    if not docs or not APPEND_EVIDENCE_SNIPPETS:
+def _strip_tail_source_list(text: str) -> str:
+    lines = (text or "").rstrip().splitlines()
+    if not lines:
+        return text
+
+    for i in range(len(lines) - 1, -1, -1):
+        heading = lines[i].strip().lower().rstrip(":")
+        if heading != "kaynaklar":
+            continue
+
+        tail = lines[i + 1 :]
+        if not tail:
+            return "\n".join(lines[:i]).rstrip()
+
+        tail_ok = True
+        for line in tail:
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith(("-", "*")):
+                continue
+            tail_ok = False
+            break
+
+        if tail_ok:
+            return "\n".join(lines[:i]).rstrip()
+
+    return (text or "").rstrip()
+
+
+def _append_sources_if_any(response: str, docs: list[dict], stream: bool) -> str:
+    if not docs or not APPEND_SOURCE_LIST:
         return response
-    cited = _extract_cited_sources(response)
-    evidence = build_evidence_snippets(docs, cited_indices=cited, max_items=3)
-    if not evidence:
-        return response
+    base = _strip_tail_source_list(response)
+    cited = [n for n in _extract_cited_sources(base) if 1 <= n <= len(docs)]
+    source_list = _build_source_list(docs=docs, max_items=MAX_SOURCES_IN_OUTPUT, source_numbers=cited if cited else None)
+    if not source_list:
+        return base
     if stream:
-        print(evidence)
-    return f"{response}\n{evidence}"
+        print(source_list)
+    return f"{base}\n{source_list}"
 
 
 def chat(
@@ -272,7 +345,7 @@ def chat(
         resp = client.chat.completions.create(model=CHAT_MODEL, messages=messages)
         response = resp.choices[0].message.content
 
-    return _append_evidence_if_any(response, docs, stream=stream)
+    return _append_sources_if_any(response, docs, stream=stream)
 
 
 def arena_response(messages: list, system_prompt: str, stream: bool = True) -> str:
@@ -309,7 +382,7 @@ Kurallar:
 1. Pozisyonunu güçlü argümanlarla savun
 2. Rakibinin argümanlarını çürüt
 3. Kısa ve keskin ol - maksimum 3-4 cümle
-4. Kaynaklardaki bilgileri kullan ve [Kaynak n] ile belirt
+4. Kaynaklardaki bilgileri kullan
 5. Rakip pes ederse zafer ilan et
 
 Kaynaklar:

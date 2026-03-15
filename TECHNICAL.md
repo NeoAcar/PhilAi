@@ -34,7 +34,7 @@ Entry point is `main.py`.
 There are two storage layers:
 
 1. Raw corpus layer (`oncul_dump/`)
-2. Retrieval index layer (`faiss_index/<provider_model>/`)
+2. Retrieval index layer (`faiss_index/<provider_model>__chunk_<strategy>/`)
 
 ### 3.1 Raw Corpus
 

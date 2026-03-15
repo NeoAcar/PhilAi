@@ -1,5 +1,6 @@
 # RAG Configuration
 import os
+import re
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -36,13 +37,20 @@ INSTRUCT_TASK = "Given a Turkish search query, retrieve relevant passages writte
 USE_GPU = True
 
 
+def _safe_segment(value: str) -> str:
+    value = (value or "").strip().lower()
+    value = re.sub(r"[^a-z0-9._-]+", "_", value)
+    return value.strip("_") or "default"
+
+
 def get_index_path() -> Path:
-    """Aktif provider/model için index klasörü."""
+    """Aktif provider/model/chunk-strategy için index klasörü."""
     if EMBEDDING_PROVIDER == "openai":
         name = OPENAI_EMBEDDING_MODEL.replace("/", "_")
     else:
         name = LOCAL_EMBEDDING_MODEL.replace("/", "_")
-    return FAISS_INDEX_DIR / f"{EMBEDDING_PROVIDER}_{name}"
+    chunk_tag = _safe_segment(CHUNK_STRATEGY)
+    return FAISS_INDEX_DIR / f"{EMBEDDING_PROVIDER}_{name}__chunk_{chunk_tag}"
 
 
 # =============== LLM SETTINGS ===============
